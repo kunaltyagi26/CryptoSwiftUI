@@ -8,18 +8,24 @@
 import SwiftUI
 
 struct CoinListView: View {
-    var showPortfolio: Bool
+    @Binding var showPortfolio: Bool
     @ObservedObject var coinListVM = CoinListViewModel()
     
     var body: some View {
         if coinListVM.coins.count != 0 {
             VStack {
+                HomeStatsView(showPortfolio: showPortfolio)
+                    .frame(height: 60)
+                    .padding(.top)
+                
+                SearchBarView(searchText: $coinListVM.searchText)
+                
                 header
                     .padding()
                 
                 List(coinListVM.coins) { coin in
                     CoinRowView(showHoldingsColumn: showPortfolio, coin: coin)
-                        .listRowInsets(.init(top: 0, leading: 0, bottom: 10, trailing: 0))
+                        .listRowInsets(.init(top: 0, leading: 6, bottom: 10, trailing: 6))
                 }
                 .listStyle(.plain)
             }
@@ -41,12 +47,12 @@ private extension CoinListView {
             
             Text("Coin")
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 30)
+                .padding(.leading, 50)
             
             Spacer()
             
             if showPortfolio {
-                HStack(spacing: 0) {
+                HStack(spacing: 4) {
                     Text("Holdings")
                     Image(systemName: "arrow.down")
                 }
@@ -55,7 +61,7 @@ private extension CoinListView {
                 Spacer()
             }
             
-            HStack(spacing: 0) {
+            HStack(spacing: 4) {
                 Text("Price")
                 Image(systemName: "arrow.down")
             }
@@ -69,5 +75,5 @@ private extension CoinListView {
 }
 
 #Preview {
-    CoinListView(showPortfolio: true)
+    CoinListView(showPortfolio: .constant(true))
 }

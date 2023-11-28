@@ -22,10 +22,10 @@ struct HomeView: View {
                 Spacer()
                 
                 if !showPortfolio {
-                    CoinListView(showPortfolio: true)
+                    CoinListView(showPortfolio: $showPortfolio)
                         .transition(.move(edge: .leading))
                 } else {
-                    CoinListView(showPortfolio: false)
+                    CoinListView(showPortfolio: $showPortfolio)
                         .transition(.move(edge: .trailing))
                 }
             }

@@ -27,6 +27,7 @@ class DataService<T: Decodable>: ObservableObject {
     enum Endpoint {
         case getCoins
         case getImage(url: String)
+        case getMarketData
         
         var urlString: String {
             switch self {
@@ -35,6 +36,9 @@ class DataService<T: Decodable>: ObservableObject {
                 
             case .getImage(let url):
                 return url
+                
+            case .getMarketData:
+                return URLConstants.getMarketData
             }
         }
     }

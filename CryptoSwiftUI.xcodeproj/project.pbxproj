@@ -25,6 +25,13 @@
 		2B80C3C22AFBC7FC00393734 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3C12AFBC7FC00393734 /* DataService.swift */; };
 		2B80C3C42AFD4EF700393734 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3C32AFD4EF700393734 /* URLConstants.swift */; };
 		2B80C3C92AFE16AC00393734 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3C82AFE16AC00393734 /* ImageManager.swift */; };
+		2B80C3CB2B01FCFF00393734 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3CA2B01FCFF00393734 /* SearchBarView.swift */; };
+		2B80C3CD2B020E5200393734 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3CC2B020E5200393734 /* View.swift */; };
+		2B80C3CF2B14A0E500393734 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3CE2B14A0E500393734 /* Statistic.swift */; };
+		2B80C3D12B14A1F800393734 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3D02B14A1F800393734 /* StatisticView.swift */; };
+		2B80C3D32B14CE4400393734 /* HomeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3D22B14CE4400393734 /* HomeStatsView.swift */; };
+		2B80C3D52B14D1C100393734 /* HomeStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3D42B14D1C100393734 /* HomeStatsViewModel.swift */; };
+		2B80C3D72B15D6A300393734 /* MarketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3D62B15D6A300393734 /* MarketData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +55,13 @@
 		2B80C3C12AFBC7FC00393734 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		2B80C3C32AFD4EF700393734 /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
 		2B80C3C82AFE16AC00393734 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		2B80C3CA2B01FCFF00393734 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		2B80C3CC2B020E5200393734 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		2B80C3CE2B14A0E500393734 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
+		2B80C3D02B14A1F800393734 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		2B80C3D22B14CE4400393734 /* HomeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsView.swift; sourceTree = "<group>"; };
+		2B80C3D42B14D1C100393734 /* HomeStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsViewModel.swift; sourceTree = "<group>"; };
+		2B80C3D62B15D6A300393734 /* MarketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +120,7 @@
 			children = (
 				2B80C39F2AFA1A5B00393734 /* Color.swift */,
 				2B80C3B82AFB6E4A00393734 /* Double.swift */,
+				2B80C3CC2B020E5200393734 /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,6 +151,7 @@
 				2B80C3AF2AFA56D100393734 /* HomeHeaderView.swift */,
 				2B80C3B42AFA717800393734 /* CoinRowView.swift */,
 				2B80C3BE2AFBA87F00393734 /* CoinListView.swift */,
+				2B80C3D22B14CE4400393734 /* HomeStatsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,6 +161,7 @@
 			children = (
 				2B80C3BA2AFBA1D900393734 /* CoinRowViewModel.swift */,
 				2B80C3BC2AFBA80200393734 /* CoinListViewModel.swift */,
+				2B80C3D42B14D1C100393734 /* HomeStatsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -153,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				2B80C3AC2AFA512B00393734 /* CircleButton */,
+				2B80C3CA2B01FCFF00393734 /* SearchBarView.swift */,
+				2B80C3D02B14A1F800393734 /* StatisticView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -170,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				2B80C3B22AFA57C800393734 /* Coin.swift */,
+				2B80C3CE2B14A0E500393734 /* Statistic.swift */,
+				2B80C3D62B15D6A300393734 /* MarketData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,20 +283,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B80C3BB2AFBA1D900393734 /* CoinRowViewModel.swift in Sources */,
+				2B80C3D12B14A1F800393734 /* StatisticView.swift in Sources */,
 				2B80C3AB2AFA24F500393734 /* CircleButtonView.swift in Sources */,
+				2B80C3D72B15D6A300393734 /* MarketData.swift in Sources */,
 				2B80C3902AFA154600393734 /* ContentView.swift in Sources */,
 				2B80C3A82AFA1FB100393734 /* HomeView.swift in Sources */,
 				2B80C3BF2AFBA87F00393734 /* CoinListView.swift in Sources */,
+				2B80C3CF2B14A0E500393734 /* Statistic.swift in Sources */,
 				2B80C38E2AFA154600393734 /* CryptoSwiftUIApp.swift in Sources */,
 				2B80C3C42AFD4EF700393734 /* URLConstants.swift in Sources */,
 				2B80C3A02AFA1A5B00393734 /* Color.swift in Sources */,
 				2B80C3B02AFA56D100393734 /* HomeHeaderView.swift in Sources */,
+				2B80C3D32B14CE4400393734 /* HomeStatsView.swift in Sources */,
 				2B80C3BD2AFBA80200393734 /* CoinListViewModel.swift in Sources */,
+				2B80C3D52B14D1C100393734 /* HomeStatsViewModel.swift in Sources */,
 				2B80C3C22AFBC7FC00393734 /* DataService.swift in Sources */,
 				2B80C3C92AFE16AC00393734 /* ImageManager.swift in Sources */,
 				2B80C3B52AFA717900393734 /* CoinRowView.swift in Sources */,
 				2B80C3B32AFA57C800393734 /* Coin.swift in Sources */,
+				2B80C3CD2B020E5200393734 /* View.swift in Sources */,
 				2B80C3B92AFB6E4A00393734 /* Double.swift in Sources */,
+				2B80C3CB2B01FCFF00393734 /* SearchBarView.swift in Sources */,
 				2B80C3AE2AFA514E00393734 /* CircleButtonAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

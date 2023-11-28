@@ -8,5 +8,9 @@
 import Foundation
 
 struct URLConstants {
-    static var getCoins = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h"
+    private static var apiKey = "CG-ec3d7btNsYg46Hp9WkGe81Pb"
+    
+    static var getCoins = "https://api.coingecko.com/api/v3/coins/markets?x_cg_demo_api_key=\(apiKey)&vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h"
+    
+    static var getMarketData = "https://api.coingecko.com/api/v3/global?x_cg_demo_api_key=\(apiKey)"
 }

@@ -45,7 +45,7 @@ private extension CoinRowView {
             Text(coinVM.rank)
                 .font(.caption)
                 .foregroundStyle(Color.theme.secondaryText)
-                .padding(.trailing)
+                .padding(.trailing, 8)
             
             coinImage
             
