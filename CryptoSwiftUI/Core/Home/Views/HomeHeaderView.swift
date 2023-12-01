@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeHeaderView: View {
     @Binding var showPortfolio: Bool
+    @Binding var showPortfolioView: Bool
     
     var body: some View {
         HStack {
@@ -18,6 +19,11 @@ struct HomeHeaderView: View {
             .background {
                 CircleButtonAnimationView(animate: $showPortfolio)
                     .frame(width: 65, height: 65)
+            }
+            .onTapGesture {
+                if showPortfolio {
+                    showPortfolioView.toggle()
+                }
             }
             
             Spacer()
@@ -43,5 +49,5 @@ struct HomeHeaderView: View {
 }
 
 #Preview {
-    HomeHeaderView(showPortfolio: .constant(false))
+    HomeHeaderView(showPortfolio: .constant(false), showPortfolioView: .constant(false))
 }

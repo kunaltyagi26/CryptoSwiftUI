@@ -13,7 +13,7 @@ struct HomeStatsView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            HStack {
+            HStack(alignment: .top) {
                 ForEach(vm.stats) { stat in
                     StatisticView(stat: stat)
                         .frame(width: geometry.size.width / 3)

@@ -47,7 +47,8 @@ private extension CoinRowView {
                 .foregroundStyle(Color.theme.secondaryText)
                 .padding(.trailing, 8)
             
-            coinImage
+            CoinImageView(coinVM: coinVM)
+                .frame(width: 30, height: 30)
             
             Text(coinVM.symbol)
                 .font(.headline)
@@ -80,23 +81,6 @@ private extension CoinRowView {
                 )
         }
         .frame(maxWidth: .infinity, alignment: .trailing)
-    }
-}
-
-extension CoinRowView {
-    var coinImage: some View {
-        ZStack {
-            if let coinImage = coinVM.image {
-                Image(uiImage: coinImage)
-                    .resizable()
-            } else if coinVM.isLoading {
-                ProgressView()
-            } else {
-                Image(systemName: "questionmark")
-                    .foregroundColor(Color.theme.secondaryText)
-            }
-        }
-        .frame(width: 30, height: 30)
     }
 }
 

@@ -32,6 +32,14 @@
 		2B80C3D32B14CE4400393734 /* HomeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3D22B14CE4400393734 /* HomeStatsView.swift */; };
 		2B80C3D52B14D1C100393734 /* HomeStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3D42B14D1C100393734 /* HomeStatsViewModel.swift */; };
 		2B80C3D72B15D6A300393734 /* MarketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3D62B15D6A300393734 /* MarketData.swift */; };
+		2B80C3D92B16016A00393734 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3D82B16016A00393734 /* PortfolioView.swift */; };
+		2B80C3DB2B16058D00393734 /* XMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3DA2B16058D00393734 /* XMarkButton.swift */; };
+		2B80C3DE2B160B1100393734 /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3DD2B160B1100393734 /* CoinImageView.swift */; };
+		2B80C3E02B160C8800393734 /* CoinLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3DF2B160C8800393734 /* CoinLogoView.swift */; };
+		2B80C3E32B171ABE00393734 /* PortfolioContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3E12B171ABE00393734 /* PortfolioContainer.xcdatamodeld */; };
+		2B80C3E52B171B6C00393734 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3E42B171B6C00393734 /* DatabaseService.swift */; };
+		2B80C3E72B174FFB00393734 /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3E62B174FFB00393734 /* PortfolioViewModel.swift */; };
+		2B80C3E92B18CACA00393734 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80C3E82B18CACA00393734 /* HapticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +70,14 @@
 		2B80C3D22B14CE4400393734 /* HomeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsView.swift; sourceTree = "<group>"; };
 		2B80C3D42B14D1C100393734 /* HomeStatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsViewModel.swift; sourceTree = "<group>"; };
 		2B80C3D62B15D6A300393734 /* MarketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketData.swift; sourceTree = "<group>"; };
+		2B80C3D82B16016A00393734 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
+		2B80C3DA2B16058D00393734 /* XMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMarkButton.swift; sourceTree = "<group>"; };
+		2B80C3DD2B160B1100393734 /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
+		2B80C3DF2B160C8800393734 /* CoinLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogoView.swift; sourceTree = "<group>"; };
+		2B80C3E22B171ABE00393734 /* PortfolioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioContainer.xcdatamodel; sourceTree = "<group>"; };
+		2B80C3E42B171B6C00393734 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		2B80C3E62B174FFB00393734 /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
+		2B80C3E82B18CACA00393734 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +168,7 @@
 				2B80C3B42AFA717800393734 /* CoinRowView.swift */,
 				2B80C3BE2AFBA87F00393734 /* CoinListView.swift */,
 				2B80C3D22B14CE4400393734 /* HomeStatsView.swift */,
+				2B80C3D82B16016A00393734 /* PortfolioView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +179,7 @@
 				2B80C3BA2AFBA1D900393734 /* CoinRowViewModel.swift */,
 				2B80C3BC2AFBA80200393734 /* CoinListViewModel.swift */,
 				2B80C3D42B14D1C100393734 /* HomeStatsViewModel.swift */,
+				2B80C3E62B174FFB00393734 /* PortfolioViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -169,9 +187,11 @@
 		2B80C3A92AFA24D500393734 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2B80C3DC2B160AFF00393734 /* Coin */,
 				2B80C3AC2AFA512B00393734 /* CircleButton */,
 				2B80C3CA2B01FCFF00393734 /* SearchBarView.swift */,
 				2B80C3D02B14A1F800393734 /* StatisticView.swift */,
+				2B80C3DA2B16058D00393734 /* XMarkButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -191,6 +211,7 @@
 				2B80C3B22AFA57C800393734 /* Coin.swift */,
 				2B80C3CE2B14A0E500393734 /* Statistic.swift */,
 				2B80C3D62B15D6A300393734 /* MarketData.swift */,
+				2B80C3E12B171ABE00393734 /* PortfolioContainer.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +221,7 @@
 			children = (
 				2B80C3C12AFBC7FC00393734 /* DataService.swift */,
 				2B80C3C32AFD4EF700393734 /* URLConstants.swift */,
+				2B80C3E42B171B6C00393734 /* DatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -208,8 +230,18 @@
 			isa = PBXGroup;
 			children = (
 				2B80C3C82AFE16AC00393734 /* ImageManager.swift */,
+				2B80C3E82B18CACA00393734 /* HapticsManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		2B80C3DC2B160AFF00393734 /* Coin */ = {
+			isa = PBXGroup;
+			children = (
+				2B80C3DD2B160B1100393734 /* CoinImageView.swift */,
+				2B80C3DF2B160C8800393734 /* CoinLogoView.swift */,
+			);
+			path = Coin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,29 +314,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B80C3E32B171ABE00393734 /* PortfolioContainer.xcdatamodeld in Sources */,
 				2B80C3BB2AFBA1D900393734 /* CoinRowViewModel.swift in Sources */,
 				2B80C3D12B14A1F800393734 /* StatisticView.swift in Sources */,
+				2B80C3E52B171B6C00393734 /* DatabaseService.swift in Sources */,
 				2B80C3AB2AFA24F500393734 /* CircleButtonView.swift in Sources */,
 				2B80C3D72B15D6A300393734 /* MarketData.swift in Sources */,
 				2B80C3902AFA154600393734 /* ContentView.swift in Sources */,
 				2B80C3A82AFA1FB100393734 /* HomeView.swift in Sources */,
 				2B80C3BF2AFBA87F00393734 /* CoinListView.swift in Sources */,
+				2B80C3D92B16016A00393734 /* PortfolioView.swift in Sources */,
 				2B80C3CF2B14A0E500393734 /* Statistic.swift in Sources */,
 				2B80C38E2AFA154600393734 /* CryptoSwiftUIApp.swift in Sources */,
 				2B80C3C42AFD4EF700393734 /* URLConstants.swift in Sources */,
 				2B80C3A02AFA1A5B00393734 /* Color.swift in Sources */,
+				2B80C3E92B18CACA00393734 /* HapticsManager.swift in Sources */,
 				2B80C3B02AFA56D100393734 /* HomeHeaderView.swift in Sources */,
+				2B80C3DE2B160B1100393734 /* CoinImageView.swift in Sources */,
 				2B80C3D32B14CE4400393734 /* HomeStatsView.swift in Sources */,
 				2B80C3BD2AFBA80200393734 /* CoinListViewModel.swift in Sources */,
 				2B80C3D52B14D1C100393734 /* HomeStatsViewModel.swift in Sources */,
+				2B80C3E02B160C8800393734 /* CoinLogoView.swift in Sources */,
 				2B80C3C22AFBC7FC00393734 /* DataService.swift in Sources */,
 				2B80C3C92AFE16AC00393734 /* ImageManager.swift in Sources */,
 				2B80C3B52AFA717900393734 /* CoinRowView.swift in Sources */,
 				2B80C3B32AFA57C800393734 /* Coin.swift in Sources */,
 				2B80C3CD2B020E5200393734 /* View.swift in Sources */,
+				2B80C3DB2B16058D00393734 /* XMarkButton.swift in Sources */,
 				2B80C3B92AFB6E4A00393734 /* Double.swift in Sources */,
 				2B80C3CB2B01FCFF00393734 /* SearchBarView.swift in Sources */,
 				2B80C3AE2AFA514E00393734 /* CircleButtonAnimationView.swift in Sources */,
+				2B80C3E72B174FFB00393734 /* PortfolioViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +565,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2B80C3E12B171ABE00393734 /* PortfolioContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2B80C3E22B171ABE00393734 /* PortfolioContainer.xcdatamodel */,
+			);
+			currentVersion = 2B80C3E22B171ABE00393734 /* PortfolioContainer.xcdatamodel */;
+			path = PortfolioContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2B80C3822AFA154600393734 /* Project object */;
 }
