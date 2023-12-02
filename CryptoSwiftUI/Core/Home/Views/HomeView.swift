@@ -18,7 +18,7 @@ struct HomeView: View {
             
             VStack {
                 HomeHeaderView(showPortfolio: $showPortfolio, showPortfolioView: $showPortfolioView)
-                .padding(.horizontal)
+                    .padding(.horizontal)
                 
                 Spacer()
                 

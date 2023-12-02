@@ -29,6 +29,7 @@ class CoinListViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     init() {
+        dataService.getData(for: .getCoins)
         addSubscriber()
     }
     
@@ -39,8 +40,6 @@ class CoinListViewModel: ObservableObject {
     }
     
     private func addSubscriber() {
-        dataService.getData(for: .getCoins)
-        
         $searchText
             .combineLatest(dataService.$result, $sortOption)
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)

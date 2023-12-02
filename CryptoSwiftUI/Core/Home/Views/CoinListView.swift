@@ -12,40 +12,56 @@ struct CoinListView: View {
     @Binding var showPortfolioView: Bool
     @ObservedObject var coinListVM = CoinListViewModel()
     
+    @State private var selectedCoin: Coin? = nil
+    @State private var showDetailView = false
+    
     var body: some View {
-        SearchBarView(searchText: $coinListVM.searchText)
-        
-        header
-            .padding()
-        
-        if showPortfolio {
-            VStack {
-                List(coinListVM.portfolioCoins) { coin in
-                    CoinRowView(showHoldingsColumn: showPortfolio, coin: coin)
-                        .listRowInsets(.init(top: 0, leading: 6, bottom: 10, trailing: 6))
+        VStack {
+            SearchBarView(searchText: $coinListVM.searchText)
+            
+            header
+                .padding()
+            
+            if showPortfolio {
+                VStack {
+                    List(coinListVM.portfolioCoins) { coin in
+                        CoinRowView(showHoldingsColumn: showPortfolio, coin: coin)
+                            .listRowInsets(.init(top: 0, leading: 6, bottom: 10, trailing: 6))
+                            .onTapGesture {
+                                segue(coin: coin)
+                            }
+                    }
+                    .listStyle(.plain)
                 }
-                .listStyle(.plain)
-            }
-            .sheet(isPresented: $showPortfolioView, content: {
-                PortfolioView(coins: coinListVM.coins, searchText: $coinListVM.searchText)
-            })
-        } else if coinListVM.coins.count != 0 {
-            VStack {
-                List(coinListVM.coins) { coin in
-                    CoinRowView(showHoldingsColumn: showPortfolio, coin: coin)
-                        .listRowInsets(.init(top: 0, leading: 6, bottom: 10, trailing: 6))
+                .sheet(isPresented: $showPortfolioView, content: {
+                    PortfolioView(coins: coinListVM.coins, searchText: $coinListVM.searchText)
+                })
+            } else if coinListVM.coins.count != 0 {
+                VStack {
+                    List(coinListVM.coins) { coin in
+                        CoinRowView(showHoldingsColumn: showPortfolio, coin: coin)
+                            .listRowInsets(.init(top: 0, leading: 6, bottom: 10, trailing: 6))
+                            .onTapGesture {
+                                segue(coin: coin)
+                            }
+                    }
+                    .listStyle(.plain)
                 }
-                .listStyle(.plain)
-            }
-        } else if coinListVM.searchText.isEmpty {
-            VStack {
+            } else if coinListVM.searchText.isEmpty {
+                VStack {
+                    Spacer()
+                    ProgressView("Loading...")
+                    Spacer()
+                }
+            } else {
                 Spacer()
-                ProgressView("Loading...")
-                Spacer()
             }
-        } else {
-            Spacer()
         }
+        .navigationDestination(isPresented: $showDetailView, destination: {
+            if let selectedCoin = selectedCoin {
+                DetailView(coin: selectedCoin)
+            }
+        })
     }
 }
 
@@ -128,6 +144,11 @@ private extension CoinListView {
         }
         .font(.caption)
         .foregroundStyle(Color.theme.secondaryText)
+    }
+    
+    private func segue(coin: Coin) {
+        selectedCoin = coin
+        showDetailView.toggle()
     }
 }
 

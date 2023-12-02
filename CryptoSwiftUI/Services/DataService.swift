@@ -28,6 +28,7 @@ class DataService<T: Decodable>: ObservableObject {
         case getCoins
         case getImage(url: String)
         case getMarketData
+        case getCoinDetail(id: String)
         
         var urlString: String {
             switch self {
@@ -39,6 +40,9 @@ class DataService<T: Decodable>: ObservableObject {
                 
             case .getMarketData:
                 return URLConstants.getMarketData
+                
+            case .getCoinDetail(let id):
+                return URLConstants.getCoinDetail(id: id)
             }
         }
     }
@@ -90,6 +94,7 @@ class DataService<T: Decodable>: ObservableObject {
     private func handleCompletion(completion: Subscribers.Completion<Error>) {
         switch completion {
         case .finished:
+            print("API call finished.")
             break
             
         case .failure(let error):
