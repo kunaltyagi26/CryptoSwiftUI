@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State private var showPortfolio = false
     @State private var showPortfolioView = false
+    @State private var showSettingsView = false
     
     var body: some View {
         ZStack {
@@ -17,8 +18,12 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             VStack {
-                HomeHeaderView(showPortfolio: $showPortfolio, showPortfolioView: $showPortfolioView)
-                    .padding(.horizontal)
+                HomeHeaderView(
+                    showPortfolio: $showPortfolio,
+                    showPortfolioView: $showPortfolioView,
+                    showSettingsView: $showSettingsView
+                )
+                .padding(.horizontal)
                 
                 Spacer()
                 
@@ -34,6 +39,9 @@ struct HomeView: View {
                         .transition(.move(edge: .trailing))
                 }
             }
+            .sheet(isPresented: $showSettingsView, content: {
+                SettingsView()
+            })
         }
     }
 }

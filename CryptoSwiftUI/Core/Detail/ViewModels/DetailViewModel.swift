@@ -15,6 +15,9 @@ class DetailViewModel: ObservableObject {
     @Published var coin: Coin
     @Published var overviewStatistics: [Statistic] = []
     @Published var additionalStatistics: [Statistic] = []
+    @Published var coinDescription: String?
+    @Published var websiteUrl: String?
+    @Published var redditUrl: String?
     
     init(coin: Coin) {
         self.coin = coin
@@ -33,6 +36,14 @@ class DetailViewModel: ObservableObject {
                 self?.overviewStatistics = returnedArrays.overview
                 self?.additionalStatistics = returnedArrays.additional
             })
+            .store(in: &cancellables)
+        
+        dataservice.$result
+            .sink { [weak self] coinDetail in
+                self?.coinDescription = coinDetail?.readableDescription
+                self?.websiteUrl = coinDetail?.links?.homepage?.first
+                self?.redditUrl = coinDetail?.links?.subredditURL
+            }
             .store(in: &cancellables)
     }
     

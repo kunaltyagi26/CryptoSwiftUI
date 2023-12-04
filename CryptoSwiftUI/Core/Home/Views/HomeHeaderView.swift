@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeHeaderView: View {
     @Binding var showPortfolio: Bool
     @Binding var showPortfolioView: Bool
+    @Binding var showSettingsView: Bool
     
     var body: some View {
         HStack {
@@ -23,6 +24,8 @@ struct HomeHeaderView: View {
             .onTapGesture {
                 if showPortfolio {
                     showPortfolioView.toggle()
+                } else {
+                    showSettingsView.toggle()
                 }
             }
             
@@ -49,5 +52,5 @@ struct HomeHeaderView: View {
 }
 
 #Preview {
-    HomeHeaderView(showPortfolio: .constant(false), showPortfolioView: .constant(false))
+    HomeHeaderView(showPortfolio: .constant(false), showPortfolioView: .constant(false), showSettingsView: .constant(true))
 }
