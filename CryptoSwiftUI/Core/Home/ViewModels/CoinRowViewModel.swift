@@ -54,7 +54,9 @@ class CoinRowViewModel: ObservableObject {
     private func downloadImage() {
         isLoading = true
         imageManager.loadImageUsingCache(withURLString: coin.image)
-        imageManager.$image.sink { [weak self] image in
+        imageManager.$image
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] image in
             self?.image = image
             self?.isLoading = false
         }

@@ -15,10 +15,21 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                swiftfulThinkingSection
-                coinGeckoSection
-                developerSection
+            ZStack {
+                Color.theme.background
+                    .ignoresSafeArea()
+                
+                List {
+                    swiftfulThinkingSection
+                        .listRowBackground(Color.theme.background.opacity(0.5))
+                    
+                    coinGeckoSection
+                        .listRowBackground(Color.theme.background.opacity(0.5))
+                    
+                    developerSection
+                        .listRowBackground(Color.theme.background.opacity(0.5))
+                }
+                .scrollContentBackground(.hidden)
             }
             .font(.headline)
             .tint(Color(uiColor: UIColor.systemBlue))

@@ -79,7 +79,6 @@ class DataService<T: Decodable>: ObservableObject {
     
     private func getPublisher(for url: URL) -> AnyPublisher<Data, Error> {
         URLSession.shared.dataTaskPublisher(for: url)
-            .subscribe(on: DispatchQueue.global(qos: .default))
             .tryCompactMap { output -> Data in
                 guard let response = output.response as? HTTPURLResponse,
                       (200...300).contains(response.statusCode) else {
@@ -87,7 +86,7 @@ class DataService<T: Decodable>: ObservableObject {
                 }
                 return output.data
             }
-            .receive(on: DispatchQueue.main)
+            .retry(3)
             .eraseToAnyPublisher()
     }
     

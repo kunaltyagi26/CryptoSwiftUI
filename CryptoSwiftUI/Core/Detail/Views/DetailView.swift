@@ -48,6 +48,10 @@ struct DetailView: View {
             }
         }
         .navigationTitle(detailVM.coin.name)
+        .background {
+            Color.theme.background
+                .ignoresSafeArea()
+        }
         .toolbar(content: {
             ToolbarItem(placement: .topBarTrailing) {
                 navigationBarTrailingItem

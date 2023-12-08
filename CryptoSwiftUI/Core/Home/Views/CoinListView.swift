@@ -24,14 +24,19 @@ struct CoinListView: View {
             
             if showPortfolio {
                 VStack {
-                    List(coinListVM.portfolioCoins) { coin in
-                        CoinRowView(showHoldingsColumn: showPortfolio, coin: coin)
-                            .listRowInsets(.init(top: 0, leading: 6, bottom: 10, trailing: 6))
-                            .onTapGesture {
-                                segue(coin: coin)
-                            }
+                    if coinListVM.portfolioCoins.count == 0 {
+                        portfolioEmptyView
+                    } else {
+                        List(coinListVM.portfolioCoins) { coin in
+                            CoinRowView(showHoldingsColumn: showPortfolio, coin: coin)
+                                .listRowInsets(.init(top: 0, leading: 6, bottom: 10, trailing: 6))
+                                .onTapGesture {
+                                    segue(coin: coin)
+                                }
+                                .listRowBackground(Color.theme.background)
+                        }
+                        .listStyle(.plain)
                     }
-                    .listStyle(.plain)
                 }
                 .sheet(isPresented: $showPortfolioView, content: {
                     PortfolioView(coins: coinListVM.coins, searchText: $coinListVM.searchText)
@@ -44,6 +49,7 @@ struct CoinListView: View {
                             .onTapGesture {
                                 segue(coin: coin)
                             }
+                            .listRowBackground(Color.theme.background)
                     }
                     .listStyle(.plain)
                 }
@@ -62,11 +68,14 @@ struct CoinListView: View {
                 DetailView(coin: selectedCoin)
             }
         })
+        .background {
+            Color.theme.background
+        }
     }
 }
 
 private extension CoinListView {
-    var header: some View {
+    private var header: some View {
         HStack(alignment: .lastTextBaseline, spacing: 0) {
             Spacer()
             
@@ -138,12 +147,27 @@ private extension CoinListView {
                 Image(systemName: "goforward")
             }
             .padding(.leading, 8)
-            .rotationEffect(coinListVM.isLoading ? .degrees(360) : .zero)
+            .rotationEffect(coinListVM.isLoading ? .degrees(360) : .zero, anchor: .center)
             
             Spacer()
         }
         .font(.caption)
         .foregroundStyle(Color.theme.secondaryText)
+    }
+    
+    private var portfolioEmptyView: some View {
+        VStack {
+            Spacer()
+            
+            Text("You haven't added any coins to the portfolio yet! Click the + button to get started.")
+                .font(.callout)
+                .foregroundStyle(Color.theme.accent)
+                .fontWeight(.medium)
+                .multilineTextAlignment(.center)
+                .padding(50)
+            
+            Spacer()
+        }
     }
     
     private func segue(coin: Coin) {

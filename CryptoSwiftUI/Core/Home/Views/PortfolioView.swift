@@ -32,6 +32,10 @@ struct PortfolioView: View {
                 .font(.headline)
             }
             .navigationTitle("Edit Portfolio")
+            .background {
+                Color.theme.background
+                    .ignoresSafeArea()
+            }
             .toolbar(content: {
                 ToolbarItem(placement: .topBarLeading) {
                     XMarkButton()
